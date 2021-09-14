@@ -1,5 +1,3 @@
-const Readline = require('readline');
-
 let comparisonsCount = 0;
 let swapsCount = 0;
 
@@ -62,18 +60,8 @@ function getSortingResult (items) {
     console.log('Comparisons count: ', comparisonsCount);
 
     console.timeEnd('Execution Time');
+
+    return quickSort(items, 0, items.length - 1);
 }
 
-let items = [];
-
-const readline = Readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-readline.question('Please input your numbers array \n', numbersArray => {
-    numbersArray.split(',')
-        .forEach(left => items.push(parseInt(left)));
-    getSortingResult(items);
-    readline.close();
-});
+module.exports = {quickSort, getSortingResult};
