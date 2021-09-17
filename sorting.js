@@ -1,17 +1,17 @@
 let comparisonsCount = 0;
 let swapsCount = 0;
 
-function partition(items, left, right) {
+function partition(items, left, right, order) {
 
     let pivot = items[Math.floor((right + left) / 2)];
 
     while (left <= right) {
-        while (items[left] < pivot) {
+        while (order === 'asc' ? items[left] < pivot : items[left] > pivot) {
             left++;
             comparisonsCount++;
         }
 
-        while (items[right] > pivot) {
+        while (order === 'asc' ? items[right] > pivot : items[right] < pivot) {
             right--;
             comparisonsCount++;
         }
@@ -28,20 +28,20 @@ function partition(items, left, right) {
     return left;
 }
 
-function quickSort(items, left, right) {
+function quickSort(items, left, right, order) {
     let index;
 
 
     if (items.length > 1) {
-        index = partition(items, left, right);
+        index = partition(items, left, right, order);
 
         if (left < index - 1) {
-            quickSort(items, left, index - 1);
+            quickSort(items, left, index - 1, order);
             comparisonsCount++;
         }
 
         if (index < right) {
-            quickSort(items, index, right);
+            quickSort(items, index, right, order);
             comparisonsCount++;
         }
         comparisonsCount++;
@@ -50,10 +50,10 @@ function quickSort(items, left, right) {
     return items;
 }
 
-function getSortingResult (items) {
+function getSortingResult (items, order) {
     console.time('Execution Time');
 
-    console.log(quickSort(items, 0, items.length - 1));
+    console.log(quickSort(items, 0, items.length - 1, order));
 
     console.log('Swaps count: ', swapsCount);
 
