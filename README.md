@@ -2,4 +2,8 @@
  
 ## to start app in the project directory run: 
 
-### `node pririotyQueue.js`
+### `npm start`
+
+## to test app in the project directory run:
+
+### `npm test`
