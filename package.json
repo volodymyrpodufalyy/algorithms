@@ -2,7 +2,7 @@
   "name": "algo-labs",
   "version": "1.0.0",
   "description": "",
-  "main": "sorting.js",
+  "main": "pririotyQueue.js",
   "dependencies": {
     "jasmine": "^3.9.0"
   },

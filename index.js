@@ -1,46 +1,17 @@
-const Readline = require('readline');
-const {getSortingResult} = require("./sorting");
+const PriorityQueue = require("./pririotyQueue");
 
-
-const readline = Readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-let items = [];
-
-let order = 'asc';
-
-const question1 = () => {
-    return new Promise((resolve, reject) => {
-        readline.question('Please choose sorting order asc or desc \n', (answer) => {
-            if (answer === 'desc' || answer === 'asc') order = answer;
-            else reject('Invalid order choice');
-            resolve()
-        })
-    })
+// Default comparison
+const queue = new PriorityQueue();
+queue.push(10, 20, 30, 40, 50);
+console.log('Top:', queue.peek());
+console.log('Size:', queue.size());
+while (!queue.isEmpty()) {
+    console.log(queue.pop());
 }
 
-const question2 = () => {
-    return new Promise((resolve, reject) => {
-        readline.question('Please input your numbers array \n', (numbersArray) => {
-            numbersArray.split(',')
-                .forEach(left => items.push(parseInt(left)));
-            getSortingResult(items, order);
-            resolve()
-        })
-    })
+// Pairwise comparison
+const pairwiseQueue = new PriorityQueue((a, b) => a[1] > b[1]);
+pairwiseQueue.push(['low', 0], ['medium', 5], ['high', 10]);
+while (!pairwiseQueue.isEmpty()) {
+    console.log(pairwiseQueue.pop()[0]);
 }
-
-const main = async () => {
-    try {
-        await question1()
-        await question2()
-        readline.close()
-    } catch (e) {
-        console.log(e)
-        readline.close()
-    }
-}
-
-main()
