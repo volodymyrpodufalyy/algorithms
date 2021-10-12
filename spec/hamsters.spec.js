@@ -1,4 +1,4 @@
-const findMaxNumberOfHamsters = require("./hamsters");
+const findMaxNumberOfHamsters = require("../hamsters");
 
 const hamstersData = {
   foodAvailable: 19,
@@ -23,4 +23,10 @@ const hamstersData = {
   ],
 };
 
-findMaxNumberOfHamsters(hamstersData);
+describe("hamsters algorithm", () =>
+  it("calculate hamsters correctly", (done) => {
+    const hamstersToTake = findMaxNumberOfHamsters(hamstersData);
+
+    expect(hamstersToTake).toEqual(3);
+    done();
+  }));

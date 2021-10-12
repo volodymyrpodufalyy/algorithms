@@ -2,9 +2,12 @@
   "name": "algo-labs",
   "version": "1.0.0",
   "description": "",
-  "main": "pririotyQueue.js",
+  "main": "hamsters.js",
   "dependencies": {
-    "jasmine": "^3.9.0"
+    "-": "0.0.1",
+    "g": "^2.0.1",
+    "jasmine": "^3.9.0",
+    "prettier": "^2.4.1"
   },
   "devDependencies": {
     "jasmine-spec-reporter": "^7.0.0"
