@@ -19,7 +19,6 @@ const findMaxNumberOfHamsters = (data) => {
       hamstersResult -= 1;
     }
   }
-  console.log(hamstersResult, "hamstersFinalResult");
   return hamstersResult;
 };
 
