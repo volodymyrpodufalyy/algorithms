@@ -4,19 +4,18 @@ const findMaxNumberOfHamsters = (data) => {
   const totalHamsterNeeds = (hamster, neighbors) => {
     return hamster.dailyNorm + neighbors * hamster.greedLevel;
   };
-  for (let i = 0; i < data.hamsters.length; i++) {
+  function add(accumulator, a) {
+    return accumulator + a;
+  }
+  for (let i = 0; i < data.hamstersNumber; i++) {
     hamstersResult += 1;
-    const sortedHamsters = data.hamsters.sort(
-      (a, b) =>
-        totalHamsterNeeds(a, hamstersResult - 1) -
-        totalHamsterNeeds(b, hamstersResult - 1)
-    );
-    const newHamstersArr = sortedHamsters.map((i) => {
-      return totalHamsterNeeds(i, hamstersResult - 1);
-    });
-    sum += newHamstersArr[i];
+    const newHamstersArr = data.hamsters
+      .map((item) => totalHamsterNeeds(item, hamstersResult - 1))
+      .sort((a, b) => a - b);
+    sum = newHamstersArr.slice(0, hamstersResult).reduce(add, 0);
     if (sum > data.foodAvailable) {
       hamstersResult -= 1;
+      break;
     }
   }
   return hamstersResult;
