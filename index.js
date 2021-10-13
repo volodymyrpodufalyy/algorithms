@@ -20,15 +20,15 @@ function main() {
             break;
           default:
             const hamster = {
-              dailyNorm: parseInt(item.split(' ')[0]),
-              greedLevel: parseInt(item.split(' ')[1]),
-            }
+              dailyNorm: parseInt(item.split(" ")[0]),
+              greedLevel: parseInt(item.split(" ")[1]),
+            };
             hamstersData.hamsters.push(hamster);
         }
       });
     const result = findMaxNumberOfHamsters(hamstersData);
-    fs.writeFileSync('hamsters.out.txt', `${result}`);
-    console.log('See the result in hamsters.out');
+    fs.writeFileSync("hamsters.out.txt", `${result}`);
+    console.log("See the result in hamsters.out");
   } catch (e) {
     console.log("Error:", e.stack);
   }

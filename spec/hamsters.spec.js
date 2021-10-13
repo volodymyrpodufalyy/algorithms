@@ -1,32 +1,30 @@
 const findMaxNumberOfHamsters = require("../hamsters");
+const {
+  hamstersData1,
+  hamstersData2,
+  hamstersData3,
+} = require("./hamstersTestData");
 
-const hamstersData = {
-  foodAvailable: 19,
-  hamstersNumber: 4,
-  hamsters: [
-    {
-      dailyNorm: 5,
-      greedLevel: 0,
-    },
-    {
-      dailyNorm: 2,
-      greedLevel: 2,
-    },
-    {
-      dailyNorm: 1,
-      greedLevel: 4,
-    },
-    {
-      dailyNorm: 5,
-      greedLevel: 1,
-    },
-  ],
-};
-
-describe("hamsters algorithm", () =>
+describe("hamsters algorithm test 1", () =>
   it("calculate hamsters correctly", (done) => {
-    const hamstersToTake = findMaxNumberOfHamsters(hamstersData);
+    const hamstersToTake = findMaxNumberOfHamsters(hamstersData1);
 
     expect(hamstersToTake).toEqual(3);
+    done();
+  }));
+
+describe("hamsters algorithm test 2", () =>
+  it("calculate hamsters correctly", (done) => {
+    const hamstersToTake = findMaxNumberOfHamsters(hamstersData2);
+
+    expect(hamstersToTake).toEqual(2);
+    done();
+  }));
+
+describe("hamsters algorithm test 3", () =>
+  it("calculate hamsters correctly", (done) => {
+    const hamstersToTake = findMaxNumberOfHamsters(hamstersData3);
+
+    expect(hamstersToTake).toEqual(1);
     done();
   }));
