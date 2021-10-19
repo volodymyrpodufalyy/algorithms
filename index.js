@@ -26,7 +26,9 @@ function main() {
             hamstersData.hamsters.push(hamster);
         }
       });
+    console.time("hamstersAlgorithm");
     const result = findMaxNumberOfHamsters(hamstersData);
+    console.timeEnd("hamstersAlgorithm");
     fs.writeFileSync("hamsters.out.txt", `${result}`);
     console.log("See the result in hamsters.out");
   } catch (e) {

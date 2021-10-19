@@ -3,6 +3,7 @@ const {
   hamstersData1,
   hamstersData2,
   hamstersData3,
+  hamstersData4,
 } = require("./hamstersTestData");
 
 describe("hamsters algorithm test 1", () =>
@@ -24,6 +25,14 @@ describe("hamsters algorithm test 2", () =>
 describe("hamsters algorithm test 3", () =>
   it("calculate hamsters correctly", (done) => {
     const hamstersToTake = findMaxNumberOfHamsters(hamstersData3);
+
+    expect(hamstersToTake).toEqual(1);
+    done();
+  }));
+
+describe("hamsters algorithm test 4", () =>
+  it("calculate hamsters correctly", (done) => {
+    const hamstersToTake = findMaxNumberOfHamsters(hamstersData4);
 
     expect(hamstersToTake).toEqual(1);
     done();
