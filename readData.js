@@ -10,13 +10,13 @@ const readData = (fileName) => {
   //read file
   const data = fs.readFileSync(fileName, "utf8");
   const allNodes = data.toString().split("\r\n");
-  startNode = allNodes.shift().split(" ")[1];
+  startNode = parseInt(allNodes.shift().split(" ")[1]);
   routes = allNodes.map((item) => {
     return [item.split(" ")[0], item.split(" ")[1]];
   });
   nodes = allNodes.join(" ").split(" ");
   const vertices = new Set(nodes);
-  return {routes, startNode, vertices};
+  return {routes, startNode, vertices, nodes};
   } catch (err) {
     console.log('Error: ', err);
   }
