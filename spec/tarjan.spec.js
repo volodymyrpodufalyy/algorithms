@@ -1,4 +1,4 @@
-const {Graph} = require("..");
+const Graph = require("../graph");
 
 describe("tarjan's algorithm test", () =>
   it("calculate tarjan's algorithm correctly", (done) => {
