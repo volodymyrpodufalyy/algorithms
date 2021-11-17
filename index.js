@@ -8,6 +8,7 @@ function main() {
     const data = readData('in.txt');
     let powersList = findPowers(data.n, data.x);
     const result = minSplits(data.n, powersList);
+    console.log(result, 'result');
     fs.writeFileSync("out.txt", `${result}`);
     console.log('See result in out.txt file')
   } catch (e) {

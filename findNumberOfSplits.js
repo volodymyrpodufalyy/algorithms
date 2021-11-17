@@ -8,7 +8,7 @@ function minSplits(binary, list) {
         if (i === n.length) return 1;
         const newBinary = binary.slice(i);
         const subResult = minSplits(newBinary, list);
-        if (subResult && (!splits || splits > subResult + 1)) {
+        if (subResult && !splits) {
           splits = subResult + 1;
         }
       }
