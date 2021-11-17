@@ -1,12 +1,17 @@
+const fs = require("fs");
 const minSplits = require("./findNumberOfSplits");
 const { findPowers } = require("./helpers");
+const readData = require("./readFile");
 
-const data = {
-  n: "101101101",
-  x: 5
+function main() {
+  try {
+    const data = readData('in.txt');
+    let powersList = findPowers(data.n, data.x);
+    const result = minSplits(data.n, powersList);
+    fs.writeFileSync("out.txt", `${result}`);
+    console.log('See result in out.txt file')
+  } catch (e) {
+    console.log("Error:", e.stack);
+  }
 }
-
-let powersList = findPowers(data.n, data.x);
-console.log(powersList);
-const result = minSplits(data.n, powersList);
-console.log(result);
+main();
