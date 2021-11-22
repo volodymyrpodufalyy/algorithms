@@ -1,16 +1,14 @@
-const fs = require("fs");
-const minSplits = require("./findNumberOfSplits");
-const { findPowers } = require("./helpers");
-const readData = require("./readFile");
+const rabinKarpSearch = require("./rabinKarpSearch");
+
 
 function main() {
   try {
-    const data = readData('in.txt');
-    let powersList = findPowers(data.n, data.x);
-    const result = minSplits(data.n, powersList);
-    console.log(result, 'result');
-    fs.writeFileSync("out.txt", `${result}`);
-    console.log('See result in out.txt file')
+    let str = "ALGO LAB A RABIN KARP ALGORITHM";
+    let pattern = "ALGO";
+    // A prime number
+    let primeNumber = 101;
+
+    rabinKarpSearch(pattern, str, primeNumber);
   } catch (e) {
     console.log("Error:", e.stack);
   }
