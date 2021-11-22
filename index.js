@@ -6,9 +6,10 @@ function main() {
     let str = "ALGO LAB A RABIN KARP ALGORITHM";
     let pattern = "ALGO";
     // A prime number
-    let primeNumber = 101;
+    let primeNumber = 115;
 
-    rabinKarpSearch(pattern, str, primeNumber);
+    const searchRes = rabinKarpSearch(pattern, str, primeNumber);
+    searchRes.forEach(i => console.log('Pattern found at ' + i));
   } catch (e) {
     console.log("Error:", e.stack);
   }
