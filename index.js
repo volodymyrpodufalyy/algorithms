@@ -3,9 +3,8 @@ const rabinKarpSearch = require("./rabinKarpSearch");
 
 function main() {
   try {
-    let str = "ALGO LAB A RABIN KARP ALGORITHM";
-    let pattern = "ALGO";
-    // A prime number
+    let str = "hаsdbdjhdaаssdsdaagdsjdgdajhdfjkhdfааsdujkdkаааshdsdjhhааuyhj";
+    let pattern = "аа";
     let primeNumber = 115;
 
     const searchRes = rabinKarpSearch(pattern, str, primeNumber);

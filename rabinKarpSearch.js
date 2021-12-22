@@ -11,8 +11,8 @@ function rabinKarpSearch(pat, str, q) {
 
   // Hash value for str
   let strHash = 0;
-  let powerOfBase = 1;
 
+  let powerOfBase = 1;
   for (i = 0; i < M - 1; i++) powerOfBase = (powerOfBase * d) % q;
 
   for (i = 0; i < M; i++) {
@@ -24,7 +24,7 @@ function rabinKarpSearch(pat, str, q) {
     if (patHash == strHash) {
       /* Check for characters one by one */
       for (j = 0; j < M; j++) {
-        if (str[i + j] != pat[j]) break;
+        if (str[i + j] !== pat[j]) break;
       }
 
       if (j == M) res.push(i);

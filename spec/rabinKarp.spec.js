@@ -16,11 +16,11 @@ describe("algorithm test", () =>
   describe("algorithm test 2", () =>
   it("perfom algorithm correctly", (done) => {
     let str = " LASADASDASNBVSDJJCSHMALGO";
-    let pattern = "GO";
+    let pattern = "Q";
     let primeNumber = 115;
     const searchRes = rabinKarpSearch(pattern, str, primeNumber);
 
-    expect(searchRes[0]).toEqual(24);
+    expect(searchRes).toEqual([]);
     done();
   }));
 
