@@ -1,4 +1,5 @@
-const findNumberOFSplits = require("../findNumberOFSplits");
+const minSplits = require("../findNumberOfSplits");
+const { findPowers } = require("../helpers");
 
 describe("algorithm test", () =>
   it("calculate algorithm correctly", (done) => {
@@ -6,8 +7,8 @@ describe("algorithm test", () =>
       n: "100111011110100100111110110011100101000111100101110010001100111011110100100111110110011100101000110010110000111100101110010001",
       x: 7
     }
-    
-    const result = findNumberOFSplits(data.n, data.x);
+    let powersList = findPowers(data.n, data.x);
+    const result = minSplits(data.n, powersList);
 
     expect(result).toEqual(5);
     done();
@@ -21,7 +22,8 @@ describe("algorithm test", () =>
       x: 5
     }
     
-    const result = findNumberOFSplits(data.n, data.x);
+    let powersList = findPowers(data.n, data.x);
+    const result = minSplits(data.n, powersList);
 
     expect(result).toEqual(3);
     done();
@@ -33,8 +35,8 @@ describe("algorithm test", () =>
       n: "1111101",
       x: 5
     }
-    
-    const result = findNumberOFSplits(data.n, data.x);
+    let powersList = findPowers(data.n, data.x);
+    const result = minSplits(data.n, powersList);
 
     expect(result).toEqual(1);
     done();
